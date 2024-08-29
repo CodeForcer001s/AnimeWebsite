@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:"Poppins",sans-serif;
+}
+/* the typewriter efffect here */
+.container{display: inline-block;}
+.typer{
+    /* border-right: 5px solid black; */
+    width:100%;
+    white-space:nowrap;
+    overflow: hidden;
+    animation:
+        typing 2s, 
+        cursor .4s step-end infinite alternate;
+}
+
+/* cursor-blink */
+@keyframes cursor{
+    50% {border-color: transparent}
+}
+/* typing effect */
+@keyframes typing{
+    from {width:0}
+}
+
+
+header{
+    z-index:999;
+    position: absolute; /*move along the page scrolling if created */
+    top:0;
+    left:0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    /* transition: 0.6s ease; */
+
+}
+.anime{
+    color: #000;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navibar{
+    position:relative;
+    /* display:none; */
+}
+.navitems a{
+    position:relative;
+    color:#000;
+    font-size:1em;
+    font-weight : 500px;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.5s ease;
+}
+.navitems a::before{
+    content: '';
+    position:absolute;
+    background: #000;
+    width:0;
+    height: 3px;
+    bottom:0px;
+    left: 0;
+    transition:0.5s ease; 
+}
+.navitems a:hover::before{
+    width:100%;
+}
+section{
+    padding:100px 200px;
+}
+.landing{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #2696e9;
+}
+.landing:before{
+    z-index:777;
+    content:'';
+    position:absolute;
+    background: rgba(236, 240, 224, 0.3);
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+}
+
+.jjks{
+    z-index:888;
+    width:75%;
+    margin-top: 55px;
+    display:none;
+}
+.jjks.active{
+    display:block;
+}
+.jjks h1{
+    font-size:3em;
+    font-weight:900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    line-height: 75px;
+    color:Black;
+}
+.jjks h1 span{
+    font-size:1.2em;
+    font-weight:400;
+}
+.jjks p{
+    margin-bottom: 65px;
+    color:black;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.6em;
+}
+.jjks a{
+    background: transparent;
+    color:red;
+    font-weight: 900;
+}
+.jjks a:hover{
+    background:aqua;
+    padding:15px 35px;
+    font-size:1.1em;
+    font-weight:500;
+    border-radius: 7px;
+}
+
+.video-slide{
+    z-index:000;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+.slider-nav{
+    z-index:888;
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    transform:translateY(80px);
+    margin-bottom: 12px;
+}
+.nav-btn{
+    width:12px;
+    height:12px;
+    background:white;
+    border-radius: 60%;
+    cursor:pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition:0.3s ease;
+}
+
+.slider-nav .nav-btn.active{
+    background:red;
+}
+
+.nav-btn:not(:last-child){
+    margin-right:20px;
+}
+.nav-btn:hover{
+    /* transform:scale3d(3.2,3.2,3.2); */
+    transform:scale(3);
+}
+
+.video-slide{
+    position:absolute;
+    width:100%;
+    clip-path: circle(0% at 0 50%);
+}
+.video-slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+
+/* Now we are going to get done with the video part */
+@media(max-width: 1040px){
+    header{
+        padding:12px 20px;
+    }
+    section{
+        padding:100px 20px;
+    }
+    .navibar{
+        position:fixed;
+        width:100%;
+        height:100vh;
+        top:0;
+        left:0;
+        right:0;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background: (1,1,1,0.5);
+    }
+   
+}
